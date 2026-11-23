@@ -1,0 +1,282 @@
+<title>Урок 1 · Профессия и гигиена</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* Layout: one 16:9 slide at a time, framed like an engraved baroque plate; sizes in container units so it scales from tablet to phone */
+:root{
+  --ink:#0e0c0d;        /* page ground */
+  --plate:#171315;      /* slide surface */
+  --bone:#e9e0d2;       /* main text */
+  --ash:#a3988c;        /* secondary text */
+  --gilt:#b8975a;       /* ornament, accents */
+  --blood:#8a2430;      /* warnings only */
+  --display:"Cormorant Garamond","Cormorant",Georgia,serif;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--ink);color:var(--bone);font-family:var(--body);display:flex;flex-direction:column;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px}
+.deck{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+.stage{width:min(100%,calc((100vh - 110px)*16/9));container-type:inline-size;aspect-ratio:16/9;max-width:100%;position:relative}
+.slide{position:absolute;inset:0;background:var(--plate);padding:5.5cqw 7cqw;display:flex;flex-direction:column;gap:2cqw;
+  border:1px solid color-mix(in srgb,var(--gilt) 55%,transparent);outline:1px solid color-mix(in srgb,var(--gilt) 25%,transparent);outline-offset:-1.2cqw;
+  opacity:0;visibility:hidden;transition:opacity .35s ease}
+.slide.on{opacity:1;visibility:visible}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
+.slide::before,.slide::after{content:"";position:absolute;width:6cqw;height:6cqw;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' fill='none' stroke='%23b8975a' stroke-width='1.2'%3E%3Cpath d='M4 56V20C4 10 10 4 20 4h36'/%3E%3Cpath d='M10 56V26c0-9 7-16 16-16h30'/%3E%3Cpath d='M20 20c6-6 14-2 10 4s-12 2-8-4'/%3E%3Ccircle cx='4' cy='4' r='2.5' fill='%23b8975a'/%3E%3C/svg%3E")}
+.slide::before{top:1.8cqw;left:1.8cqw}
+.slide::after{bottom:1.8cqw;right:1.8cqw;transform:rotate(180deg)}
+.eyebrow{font-size:1.25cqw;letter-spacing:.25em;text-transform:uppercase;color:var(--gilt);font-weight:700}
+h1,h2{font-family:var(--display);font-weight:600;margin:0;line-height:1.02;text-wrap:balance}
+h1{font-size:7.4cqw}
+h2{font-size:4.2cqw}
+h2 em,h1 em{font-style:italic;color:var(--gilt);font-weight:500}
+p,li{font-size:1.75cqw;line-height:1.5;margin:0;color:var(--bone)}
+.muted{color:var(--ash)}
+ul,ol{margin:0;padding-left:2.4cqw;display:flex;flex-direction:column;gap:.9cqw}
+li::marker{color:var(--gilt)}
+.grid{display:grid;gap:2.2cqw;flex:1;min-height:0}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+.cell{border-top:1px solid color-mix(in srgb,var(--gilt) 50%,transparent);padding-top:1.2cqw;display:flex;flex-direction:column;gap:.7cqw;min-width:0}
+.cell h3{font-family:var(--display);font-size:2.6cqw;font-weight:600;margin:0;color:var(--bone)}
+.cell p{font-size:1.55cqw}
+.tag{display:inline-block;font-size:1.15cqw;letter-spacing:.12em;text-transform:uppercase;padding:.3cqw .8cqw;border:1px solid var(--gilt);color:var(--gilt);align-self:flex-start}
+.tag.red{border-color:var(--blood);color:#d77a84;background:color-mix(in srgb,var(--blood) 18%,transparent)}
+.warn{border-left:.35cqw solid var(--blood);padding:.6cqw 0 .6cqw 1.6cqw;background:color-mix(in srgb,var(--blood) 10%,transparent)}
+.steps{counter-reset:s;list-style:none;padding:0;gap:1.1cqw}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3.4cqw 1fr;align-items:baseline}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:2.8cqw;color:var(--gilt);font-style:italic}
+.cover{justify-content:center;align-items:flex-start}
+.cover .sub{font-family:var(--display);font-style:italic;font-size:2.8cqw;color:var(--ash)}
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8cqw;flex:1}
+.week{display:flex;flex-direction:column;gap:.8cqw;min-width:0}
+.week b{font-family:var(--display);font-size:2.3cqw;font-weight:600;color:var(--gilt)}
+.week span{font-size:1.45cqw;line-height:1.45;color:var(--ash)}
+.week span.now{color:var(--bone);font-weight:700}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:0;flex:1}
+.zone{padding:1.6cqw;display:flex;flex-direction:column;gap:.8cqw;border:1px solid color-mix(in srgb,var(--gilt) 35%,transparent);margin-left:-1px}
+.zone.dirty{background:color-mix(in srgb,var(--blood) 14%,transparent)}
+.zone h3{font-family:var(--display);font-size:3cqw;margin:0;font-weight:600}
+.zone p{font-size:1.5cqw}
+.foot{position:absolute;left:7cqw;right:7cqw;bottom:2.6cqw;display:flex;justify-content:space-between;font-size:1.1cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.bar{display:flex;align-items:center;justify-content:center;gap:16px;padding-top:12px}
+.bar button{font:500 15px var(--body);color:var(--bone);background:transparent;border:1px solid var(--gilt);padding:8px 18px;cursor:pointer;min-width:44px}
+.bar button:hover{background:color-mix(in srgb,var(--gilt) 18%,transparent)}
+.bar button:focus-visible{outline:2px solid var(--bone);outline-offset:2px}
+.bar output{font:500 14px var(--body);color:var(--ash);font-variant-numeric:tabular-nums;min-width:56px;text-align:center}
+@media (max-aspect-ratio:1/1){
+  /* portrait phone or tablet: slide fills the screen and scrolls inside, columns stack */
+  .deck{align-items:stretch}
+  .stage{width:100%;aspect-ratio:auto;height:100%}
+  .slide{overflow-y:auto;padding:12cqw 7cqw 14cqw;gap:4cqw;outline-offset:-2.4cqw}
+  .slide::before,.slide::after{width:11cqw;height:11cqw}
+  .eyebrow{font-size:3cqw}
+  h1{font-size:14cqw}h2{font-size:8.4cqw}
+  p,li,.cell p,.zone p{font-size:4.1cqw}
+  .week span{font-size:3.6cqw}.week b{font-size:5cqw}
+  .cell h3,.zone h3{font-size:5.6cqw}
+  .tag{font-size:2.8cqw;padding:.6cqw 1.6cqw}
+  .g2,.g3,.zones{grid-template-columns:1fr}.weeks{grid-template-columns:1fr 1fr}
+  .grid,.weeks,.zones{flex:none;gap:4cqw}.zone{margin-left:0;padding:4cqw}
+  ul,ol{padding-left:5cqw;gap:2cqw}.steps{padding:0;gap:2.4cqw}
+  .steps li{grid-template-columns:7cqw 1fr}.steps li::before{font-size:6cqw}
+  .cover .sub{font-size:6cqw}
+  .foot{position:static;margin-top:auto;font-size:2.6cqw;gap:4cqw}
+  .warn{border-left-width:1cqw;padding:2cqw 0 2cqw 3cqw}
+}
+</style>
+
+<div class="deck">
+<div class="stage" id="stage">
+
+<section class="slide cover on" aria-label="Обложка">
+  <span class="eyebrow">Базовый курс татуировки · занятие 1 из 12</span>
+  <h1>Профессия<br>и <em>гигиена</em></h1>
+  <p class="sub">Сначала научимся не навредить. Рисовать будем потом.</p>
+  <div class="foot"><span>ink.quisition</span><span>Тбилиси · декабрь 2026</span></div>
+</section>
+
+<section class="slide" aria-label="Карта курса">
+  <span class="eyebrow">Карта курса</span>
+  <h2>Четыре недели, <em>двенадцать</em> встреч</h2>
+  <div class="weeks">
+    <div class="week"><b>Неделя 1 · Основа</b><span class="now">1. Профессия и гигиена ← мы здесь</span><span>2. Оборудование</span><span>3. Кожа, тело, клиент</span></div>
+    <div class="week"><b>Неделя 2 · Эскиз</b><span>4. Рисунок для тату</span><span>5. Procreate и референсы</span><span>6. Трафарет и первые линии</span></div>
+    <div class="week"><b>Неделя 3 · Техника</b><span>7. Линии</span><span>8. Тени</span><span>9. Чёрная заливка и дарк-графика</span></div>
+    <div class="week"><b>Неделя 4 · Работа</b><span>10. Целая работа на синтетике</span><span>11. Клиент и портфолио</span><span>12. Финал и сертификат</span></div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Цели занятия">
+  <span class="eyebrow">Сегодня</span>
+  <h2>Что ты будешь <em>уметь</em> к концу занятия</h2>
+  <ul>
+    <li>Понимать, как устроена работа тату-мастера.</li>
+    <li>Знать, какие инфекции передаются через кровь и как мы от них защищаемся.</li>
+    <li>Отличать зоны «чисто», «грязно» и «вне зоны».</li>
+    <li>Правильно надевать и снимать перчатки.</li>
+    <li>Обматывать рабочее место и разбирать его после сеанса.</li>
+  </ul>
+  <p class="muted">Иглы сегодня не будет. Зато всё, что мы сегодня отработаем, ты будешь делать перед каждым сеансом.</p>
+</section>
+
+<section class="slide" aria-label="Где работают мастера">
+  <span class="eyebrow">Профессия</span>
+  <h2>Где работает <em>мастер</em></h2>
+  <div class="grid g2">
+    <div class="cell"><h3>Аренда места в студии</h3><p>Платишь студии сумму или процент, получаешь место, санитарную базу и иногда клиентов. Так работаю я.</p></div>
+    <div class="cell"><h3>Студия «на процент»</h3><p>Студия даёт клиентов и оборудование, большая часть дохода остаётся ей. Удобно для старта.</p></div>
+    <div class="cell"><h3>Гест-споты</h3><p>Несколько дней в чужой студии, часто в другой стране. Новые клиенты и чужой опыт.</p></div>
+    <div class="cell"><h3>Своя студия</h3><p>Полный контроль и все расходы: аренда, требования, администратор.</p></div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Стили">
+  <span class="eyebrow">Общий язык</span>
+  <h2>Стили, с которыми <em>работаем</em></h2>
+  <div class="grid g3">
+    <div class="cell"><h3>Файнлайн</h3><p>Тонкие аккуратные линии, минимум заливки. Видна каждая неровность.</p></div>
+    <div class="cell"><h3>Графика</h3><p>Линия и штриховка, как гравюра или рисунок пером.</p></div>
+    <div class="cell"><h3>Дарк-графика</h3><p>Графика с большим количеством чёрного, контраст, тёмные сюжеты.</p></div>
+    <div class="cell"><h3>Микрореализм</h3><p>Маленькие реалистичные изображения. Нужен запас по размеру.</p></div>
+    <div class="cell"><h3>Традиционная</h3><p>Толстый контур, ограниченная палитра, классические сюжеты.</p></div>
+    <div class="cell"><h3>И другие</h3><p>Реализм, блэкворк, орнаментал, акварель. Посмотрим на примерах.</p></div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Инфекции через кровь">
+  <span class="eyebrow">Bloodborne pathogens</span>
+  <h2>Три инфекции, которые передаются <em>через кровь</em></h2>
+  <div class="grid g3">
+    <div class="cell"><h3>Гепатит B</h3><span class="tag">есть прививка</span><p>Очень заразен, хватает невидимой капли. В засохшей крови на поверхности живёт до недели.</p></div>
+    <div class="cell"><h3>Гепатит C</h3><span class="tag red">прививки нет</span><p>Часто годами без симптомов: человек может не знать, что болен. Защита — только гигиена.</p></div>
+    <div class="cell"><h3>ВИЧ</h3><span class="tag">есть экстренная профилактика</span><p>Вне тела менее устойчив, но укол использованной иглой опасен. Профилактику начинают в первые часы.</p></div>
+  </div>
+  <p class="muted">Про прививку от гепатита B поговори со своим врачом до начала работы с людьми.</p>
+</section>
+
+<section class="slide" aria-label="Как передаются">
+  <span class="eyebrow">Как это происходит</span>
+  <h2>Мы не знаем, кто болен. <em>Поэтому защищаемся всегда</em></h2>
+  <div class="grid g2">
+    <div class="cell"><h3>Пути заражения</h3><ul><li>Укол использованной иглой.</li><li>Кровь на ранку или слизистую: глаза, рот.</li><li>Через вещи: «грязная» перчатка трогает лампу, бутылку, телефон — и дальше к следующему клиенту.</li></ul></div>
+    <div class="cell"><h3>Что мы делаем</h3><ul><li>Одноразовые картриджи, вскрываем при клиенте.</li><li>Перчатки меняем при каждом выходе из зоны.</li><li>Плёнка на всём, что трогаем.</li><li>Краска — в одноразовые колпачки, обратно не сливаем.</li><li>Дезинфекция поверхностей и правильные отходы.</li></ul></div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Если укололась">
+  <span class="eyebrow">Запомни заранее</span>
+  <h2>Если укололась <em>использованной</em> иглой</h2>
+  <ol class="steps">
+    <li><p>Остановиться и снять перчатку.</p></li>
+    <li><p>Промыть место водой с мылом. Не тереть щёткой, не прижигать, не выдавливать. Брызги в глаза или рот — промыть большим количеством воды.</p></li>
+    <li><p>Записать время, что случилось и чья это была игла.</p></li>
+    <li><p>В тот же день — к врачу-инфекционисту. Экстренная профилактика работает лучше всего в первые часы.</p></li>
+    <li><p>Вежливо попросить клиента сдать анализы. Он может отказаться.</p></li>
+  </ol>
+  <p class="warn">Сохрани в телефоне адрес и номер инфекционного центра в Тбилиси. В нужный момент искать будет некогда.</p>
+</section>
+
+<section class="slide" aria-label="Зоны">
+  <span class="eyebrow">Перекрёстное заражение</span>
+  <h2>Три <em>зоны</em> рабочего места</h2>
+  <div class="zones">
+    <div class="zone"><h3>Чисто</h3><p>То, что ещё не касалось клиента: запечатанные картриджи, новые колпачки, коробка перчаток, полотенца.</p></div>
+    <div class="zone dirty"><h3>Грязно</h3><p>Всё в зоне сеанса: машинка с иглой, провод, колпачки с краской, салфетки, перчатки во время работы.</p></div>
+    <div class="zone"><h3>Вне зоны</h3><p>Телефон, дверь, ящики, сумка, планшет. В рабочих перчатках не трогаем никогда.</p></div>
+  </div>
+  <p class="muted">Представь, что на перчатках краска, которая не смывается. Всё, что ты тронула, окрашено. Кровь ведёт себя так же, только её не видно.</p>
+</section>
+
+<section class="slide" aria-label="Одноразовое и отходы">
+  <span class="eyebrow">Расходники и отходы</span>
+  <h2>Одноразовое — <em>правда</em> одноразовое</h2>
+  <div class="grid g3">
+    <div class="cell"><h3>Выбрасываем</h3><p>Картриджи, колпачки, перчатки, плёнка, барьерные пакеты, салфетки, бритвы, пелёнки.</p></div>
+    <div class="cell"><h3>Защищаем и протираем</h3><p>Машинка, блок питания, лампа, кушетка, стол. Средство держим на поверхности столько, сколько написано на этикетке.</p></div>
+    <div class="cell"><h3>Куда выбрасывать</h3><p>Всё острое — в непрокалываемый контейнер. Всё с кровью — в пакет для медицинских отходов. Не в обычный мусор.</p></div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Перчатки">
+  <span class="eyebrow">Главное умение сегодня</span>
+  <h2>Как снять перчатки <em>чисто</em></h2>
+  <div class="grid g2">
+    <ol class="steps">
+      <li><p>Рукой в перчатке возьми вторую перчатку снаружи у запястья.</p></li>
+      <li><p>Стяни её наизнанку и зажми в кулаке.</p></li>
+      <li><p>Пальцы голой руки заведи внутрь второй перчатки, под манжету.</p></li>
+      <li><p>Стяни её наизнанку, чтобы первая оказалась внутри.</p></li>
+      <li><p>В пакет для отходов, затем вымой руки.</p></li>
+    </ol>
+    <div class="cell"><h3>Меняем перчатки, когда</h3><ul><li>порвалась или прокололась;</li><li>нужно тронуть что-то вне зоны;</li><li>перерыв в сеансе;</li><li>закончила обмотку и начинаешь работу;</li><li>закончила разбор места.</li></ul></div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Обмотка">
+  <span class="eyebrow">Практика</span>
+  <h2>Порядок <em>обмотки</em> места</h2>
+  <div class="grid g2">
+    <ol class="steps">
+      <li><p>Продезинфицировать поверхности.</p></li>
+      <li><p>Вымыть руки, надеть перчатки.</p></li>
+      <li><p>Пелёнка на стол.</p></li>
+      <li><p>Плёнка на лампу и бутылки.</p></li>
+      <li><p>Рукав на провод.</p></li>
+    </ol>
+    <ol class="steps" start="6" style="counter-reset:s 5">
+      <li><p>Пакет или плёнка на машинку, без складок у захвата.</p></li>
+      <li><p>Плёнка на кнопки блока, педаль в пакет.</p></li>
+      <li><p>Выложить колпачки, вазелин, полотенца, воду.</p></li>
+      <li><p>Проверить, что всё на столе. Картридж вскрываем при клиенте.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide" aria-label="Проверь себя">
+  <span class="eyebrow">Проверь себя</span>
+  <h2>Ответь <em>без подсказок</em></h2>
+  <ol class="steps">
+    <li><p>Какие три инфекции передаются через кровь? От какой есть прививка?</p></li>
+    <li><p>Что такое перекрёстное заражение? Приведи пример с рабочего места.</p></li>
+    <li><p>Почему остатки краски нельзя вернуть в бутылку?</p></li>
+    <li><p>Куда выбрасывать использованный картридж?</p></li>
+    <li><p>Что делать первые 10 минут после укола иглой?</p></li>
+  </ol>
+</section>
+
+<section class="slide" aria-label="Домашнее задание">
+  <span class="eyebrow">До следующего занятия</span>
+  <h2>Домашнее <em>задание</em></h2>
+  <div class="grid g2">
+    <div class="cell"><h3>Рука</h3><p>3 листа линий от руки без линейки: прямые, дуги, круги, спирали. Одним движением, без обводки. Лучше по 15–20 минут каждый день, чем всё за один вечер.</p></div>
+    <div class="cell"><h3>Глаз</h3><p>Доска в Pinterest на 30 работ, которые нравятся. Под каждой одна строка: чем цепляет. Линия, сюжет, контраст, размер, место на теле.</p></div>
+  </div>
+  <p class="muted">Следующее занятие: оборудование. Машинки, картриджи, вольтаж и первый контакт с синтетической кожей.</p>
+  <div class="foot"><span>ink.quisition</span><span>занятие 1 · профессия и гигиена</span></div>
+</section>
+
+</div>
+</div>
+<nav class="bar" aria-label="Слайды">
+  <button id="prev" type="button" aria-label="Предыдущий слайд">←</button>
+  <output id="count" aria-live="polite">1 / 14</output>
+  <button id="next" type="button" aria-label="Следующий слайд">→</button>
+</nav>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,out=document.getElementById('count');
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('on',k===i)});out.textContent=(i+1)+' / '+slides.length;try{history.replaceState(null,'','#s'+(i+1))}catch(e){}}
+  document.getElementById('prev').onclick=function(){go(i-1)};
+  document.getElementById('next').onclick=function(){go(i+1)};
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}});
+  var x0=null,st=document.getElementById('stage');
+  st.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  st.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+  st.addEventListener('click',function(e){var r=st.getBoundingClientRect();go(i+(e.clientX-r.left>r.width/3?1:-1))});
+  var m=/^#s(\d+)$/.exec(location.hash);go(m?parseInt(m[1],10)-1:0);
+})();
+</script>
