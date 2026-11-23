@@ -4,4 +4,4 @@
 
 | Урок | Тема | Файл | Ссылка |
 |---|---|---|---|
-| 1 | Профессия и гигиена | `course/prezentacii/urok-01.html` | _ждёт публикации_ |
+| 1 | Профессия и гигиена | `course/prezentacii/urok-01.html` | https://claude.ai/artifact/53TGviUL3cAawybJkWU1ZA |
