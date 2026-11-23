@@ -94,7 +94,8 @@ li::marker{color:var(--orange);font-weight:800}
 
 /* ---------- cover ---------- */
 .cover{justify-content:flex-end;align-items:flex-start;gap:1.4cqw;padding-bottom:4cqw}
-.cover .face{width:27cqw;left:50%;top:6%;transform:translateX(-50%) rotate(-4deg)}
+.cover .face{width:30cqw;left:50%;top:3%;transform:translateX(-50%) rotate(-4deg)}
+.cover .wm{padding:.5cqw 1.2cqw}.cover .wm img{height:4cqw;display:block}
 .cover .title{font-size:7.4cqw;letter-spacing:-.01em}
 .cover .row{display:flex;gap:1.4cqw;align-items:stretch;flex-wrap:wrap}
 .cover .small{font-size:1.9cqw;padding:.9cqw 1.6cqw;display:flex;align-items:center}
@@ -162,7 +163,7 @@ li::marker{color:var(--orange);font-weight:800}
   ul,ol{padding-left:5cqw;gap:2cqw}.steps{padding:0;gap:2.4cqw}
   .steps li{grid-template-columns:8cqw 1fr}.steps li::before{width:6cqw;height:6cqw;font-size:3.6cqw}
   .cover{justify-content:flex-end;min-height:100%}
-  .cover .face{width:56cqw;top:9cqw}.cover .cart{width:20cqw;right:5cqw;top:60cqw}
+  .cover .face{width:62cqw;top:8cqw}.cover .wm img{height:8cqw}.cover .cart{width:20cqw;right:5cqw;top:60cqw}
   .cover .title{font-size:11cqw}.cover .small{font-size:4.2cqw;padding:2cqw 3cqw}.cover .sub{font-size:2.8cqw}
   .label{border-radius:3cqw;padding:1.4cqw 3.4cqw}
   .sgroup .head .label{font-size:5.4cqw}.sgroup .head p{font-size:3.6cqw;padding:1cqw 2cqw}
@@ -178,12 +179,12 @@ li::marker{color:var(--orange);font-weight:800}
 
 <section class="slide hot cover on" aria-label="Обложка">
   <div class="drips"></div>
-  <img class="sticker face" src="{{face}}" alt="">
+  <img class="sticker face" src="{{logo}}" alt="Логотип ink.quisition: девушка-маскот, tattoo artist">
   <img class="sticker cart" src="{{cartridge}}" alt="">
   <span class="sub">базовый курс татуировки · урок 1 из 13</span>
   <div class="label title">Профессия и гигиена</div>
   <div class="row">
-    <div class="label small">INK.QUISITION</div>
+    <div class="label small wm"><img src="{{wordmark}}" alt="INK.QUISITION"></div>
     <div class="label small">Сначала учимся не навредить. Рисуем потом</div>
   </div>
 </section>
@@ -433,7 +434,7 @@ li::marker{color:var(--orange);font-weight:800}
       <p class="fine">Дальше: оборудование. Машинки, картриджи, вольтаж и первый контакт с синтетикой.</p>
     </div>
   </div>
-  <div class="foot"><span>ink.quisition</span><span>урок 1 · профессия и гигиена</span></div>
+  <div class="foot"><span class="label wm" style="padding:.4cqw 1cqw"><img src="{{wordmark}}" alt="INK.QUISITION" style="height:2.2cqw;display:block"></span><span>урок 1 · профессия и гигиена</span></div>
 </section>
 
 </div>
