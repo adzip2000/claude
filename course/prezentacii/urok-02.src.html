@@ -1,0 +1,454 @@
+<title>Урок 2 · Оборудование</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Oswald:wght@600;700&family=Unbounded:wght@500;700&family=Manrope:wght@500;700;800&display=swap">
+<style>
+/* Style of the ink.quisition gift certificate: sky-blue airbrush, orange grunge lettering with white glow, glossy white stickers, orange starburst */
+:root{
+  --page:#cfe6fa;        /* page around the slide */
+  --sky:#1f86e0;         /* airbrush blue */
+  --sky-2:#5fb0f0;       /* light blue */
+  --mist:#eaf6ff;        /* whitish glow */
+  --orange:#ff6a13;      /* headline orange */
+  --orange-2:#ff8a2a;
+  --ice:#9fd3f5;         /* star blue on orange */
+  --ink:#121212;         /* sticker text */
+  --paper:#ffffff;       /* sticker */
+  --muted:#4a5a6a;
+  --grunge:"Rubik Dirt","Manrope",sans-serif;
+  --cond:"Oswald","Arial Narrow",sans-serif;
+  --wide:"Unbounded","Manrope",sans-serif;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  --scratch:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' stroke='white' stroke-width='.6' opacity='.7'%3E%3Cpath d='M10 60L180 20M40 300L390 210M120 390L300 330M0 180L90 150M220 120L400 60M60 240L160 220M250 380L380 300M300 160L360 140'/%3E%3C/svg%3E");
+  --star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='%239fd3f5' points='50.0,0.0 58.0,30.6 85.4,14.6 69.4,42.0 100.0,50.0 69.4,58.0 85.4,85.4 58.0,69.4 50.0,100.0 42.0,69.4 14.6,85.4 30.6,58.0 0.0,50.0 30.6,42.0 14.6,14.6 42.0,30.6'/%3E%3C/svg%3E");
+  --star-blue:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon fill='%231f86e0' points='50.0,0.0 58.0,30.6 85.4,14.6 69.4,42.0 100.0,50.0 69.4,58.0 85.4,85.4 58.0,69.4 50.0,100.0 42.0,69.4 14.6,85.4 30.6,58.0 0.0,50.0 30.6,42.0 14.6,14.6 42.0,30.6'/%3E%3C/svg%3E");
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#0d1b2a}}
+:root[data-theme="dark"]{--page:#0d1b2a}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--body);display:flex;flex-direction:column;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px}
+.deck{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+.stage{width:min(100%,calc((100vh - 110px)*16/9));container-type:inline-size;aspect-ratio:16/9;max-width:100%;position:relative}
+
+/* ---------- slide surfaces ---------- */
+.slide{position:absolute;inset:0;overflow:hidden;padding:4.6cqw 6cqw;display:flex;flex-direction:column;gap:1.8cqw;border-radius:1.2cqw;
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 30%,var(--mist) 0,rgba(234,246,255,.85) 35%,transparent 70%),
+    radial-gradient(ellipse 30% 60% at 8% 90%,var(--sky) 0,transparent 70%),
+    radial-gradient(ellipse 35% 40% at 95% 80%,var(--sky) 0,transparent 70%),
+    radial-gradient(ellipse 25% 35% at 90% 10%,var(--sky-2) 0,transparent 75%),
+    linear-gradient(160deg,#bfe2fb 0,#8cc8f3 60%,#5aa9ea 100%);
+  opacity:0;visibility:hidden;transition:opacity .35s ease;isolation:isolate}
+.slide.on{opacity:1;visibility:visible}
+@media (prefers-reduced-motion:reduce){.slide{transition:none}}
+/* halftone dots in the lower-left corner + blurred star like on the certificate */
+.slide::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle,rgba(31,134,224,.55) .18cqw,transparent .24cqw) 0 0/.9cqw .9cqw;
+  -webkit-mask-image:radial-gradient(ellipse 45% 55% at 0% 100%,#000 0,transparent 70%);mask-image:radial-gradient(ellipse 45% 55% at 0% 100%,#000 0,transparent 70%)}
+.slide::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:var(--noise),var(--scratch);background-size:300px,60cqw;opacity:.28;mix-blend-mode:screen}
+.blurstar{position:absolute;z-index:-1;width:34cqw;aspect-ratio:1;background:var(--star-blue) center/contain no-repeat;filter:blur(.7cqw);opacity:.55;right:-8cqw;bottom:-12cqw;transform:rotate(12deg);pointer-events:none}
+.slide.hot{background:
+    radial-gradient(ellipse 40% 30% at 20% 85%,var(--orange-2) 0,transparent 70%),
+    linear-gradient(180deg,#ff7a1e,var(--orange) 70%,#f25f0c)}
+.slide.hot::before{background:var(--star) center 42%/86cqw no-repeat;-webkit-mask-image:none;mask-image:none;filter:blur(.15cqw)}
+.slide.hot .drips{position:absolute;inset:auto 0 0 0;height:30%;z-index:-1;opacity:.35;
+  background:repeating-linear-gradient(90deg,transparent 0 7cqw,rgba(255,180,120,.6) 7cqw 7.6cqw,transparent 7.6cqw 13cqw)}
+
+/* ---------- type ---------- */
+.eyebrow{font-family:var(--wide);font-size:1.15cqw;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);font-weight:700;
+  text-shadow:0 0 .6cqw #fff,0 0 .6cqw #fff}
+h1,h2{font-family:var(--grunge);font-weight:400;margin:0;line-height:.98;text-wrap:balance;color:var(--orange);
+  text-shadow:0 0 .5cqw #fff,0 0 1.2cqw #fff,0 0 2.4cqw rgba(255,255,255,.9)}
+h1{font-size:8.2cqw;text-transform:lowercase}
+h2{font-size:4.1cqw;text-transform:lowercase}
+h1 em,h2 em{font-style:normal;color:var(--sky)}
+p,li{font-size:1.85cqw;line-height:1.42;margin:0}
+.note{font-size:1.65cqw;color:var(--ink);background:rgba(255,255,255,.75);border-radius:1cqw;padding:.8cqw 1.4cqw;align-self:flex-start;font-weight:500}
+ul,ol{margin:0;padding-left:2.2cqw;display:flex;flex-direction:column;gap:.7cqw}
+li::marker{color:var(--orange);font-weight:800}
+
+/* ---------- stickers ---------- */
+.grid{display:grid;gap:1.8cqw;flex:1;min-height:0;align-content:start}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.cell,.panel{background:var(--paper);border-radius:1.6cqw;padding:1.4cqw 1.6cqw;display:flex;flex-direction:column;gap:.6cqw;min-width:0;
+  box-shadow:0 0 0 .35cqw #fff,0 .5cqw 1.4cqw rgba(10,60,120,.28);position:relative}
+.cell:nth-child(odd){transform:rotate(-.6deg)}.cell:nth-child(even){transform:rotate(.5deg)}
+.cell h3,.panel h3{font-family:var(--cond);font-weight:700;font-size:2.6cqw;line-height:1.05;margin:0;text-transform:uppercase;letter-spacing:.01em}
+.cell p,.panel p,.panel li,.cell li{font-size:1.72cqw}
+.tag{display:inline-block;font-family:var(--wide);font-weight:700;font-size:.95cqw;letter-spacing:.06em;text-transform:uppercase;padding:.35cqw .9cqw;border-radius:99px;background:var(--orange);color:#fff;align-self:flex-start}
+.tag.no{background:var(--ink)}
+.tag.blue{background:var(--sky)}
+.warn{background:var(--ink);color:#fff;border-radius:1.2cqw;padding:1cqw 1.6cqw;font-weight:700;font-size:1.65cqw}
+.warn b{color:var(--orange-2)}
+.steps{counter-reset:s;list-style:none;padding:0;gap:.8cqw}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3cqw 1fr;align-items:start;gap:.4cqw}
+.steps li::before{content:counter(s);font-family:var(--cond);font-weight:700;font-size:1.6cqw;color:#fff;background:var(--orange);width:2.5cqw;height:2.5cqw;border-radius:50%;display:grid;place-items:center;margin-top:.05cqw}
+.sticker{position:absolute;z-index:3;filter:drop-shadow(0 .5cqw .8cqw rgba(0,0,0,.25));pointer-events:none}
+.label{background:#fff;border-radius:1.6cqw;padding:.6cqw 1.8cqw;font-family:var(--cond);font-weight:700;text-transform:uppercase;color:var(--ink);line-height:.95;
+  box-shadow:inset 0 .3cqw 0 rgba(255,255,255,.9),0 .5cqw 1.2cqw rgba(0,0,0,.25)}
+
+/* ---------- cover ---------- */
+.cover{justify-content:flex-end;align-items:flex-start;gap:1.4cqw;padding-bottom:4cqw}
+.cover .face{width:30cqw;left:50%;top:3%;transform:translateX(-50%) rotate(-4deg)}
+.cover .wm{padding:.5cqw 1.2cqw}.cover .wm img{height:4cqw;display:block}
+.cover .title{font-size:7.4cqw;letter-spacing:-.01em}
+.cover .row{display:flex;gap:1.4cqw;align-items:stretch;flex-wrap:wrap}
+.cover .small{font-size:1.9cqw;padding:.9cqw 1.6cqw;display:flex;align-items:center}
+.cover .sub{font-family:var(--wide);font-size:1.25cqw;color:#fff;letter-spacing:.08em;text-transform:uppercase;font-weight:700;text-shadow:0 .2cqw .6cqw rgba(0,0,0,.25)}
+.cover .cart{width:10cqw;right:6cqw;top:8cqw;transform:rotate(8deg)}
+
+/* ---------- map ---------- */
+.weeks{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4cqw;flex:1;align-content:start}
+.week{background:#fff;border-radius:1.4cqw;padding:1.2cqw;display:flex;flex-direction:column;gap:.55cqw;min-width:0;box-shadow:0 .5cqw 1.2cqw rgba(10,60,120,.22)}
+.week b{font-family:var(--cond);font-size:1.95cqw;text-transform:uppercase;color:var(--sky)}
+.week span{font-size:1.55cqw;line-height:1.35}
+.week span.now{background:var(--orange);color:#fff;font-weight:800;border-radius:.6cqw;padding:.3cqw .6cqw}
+.week.final{background:var(--ink);color:#fff}.week.final b{color:var(--orange-2)}
+
+/* ---------- styles with photos ---------- */
+.styles{display:grid;gap:1.6cqw;flex:none}
+.s6{grid-template-columns:1fr 1.4fr}.s6 .pics{height:23cqw}
+.g2w{grid-template-columns:1.25fr 1fr}
+.fine{font-size:1.2cqw!important;color:var(--muted);margin-top:auto!important}
+.s5{grid-template-columns:1.25fr 1fr}
+.sgroup{display:flex;flex-direction:column;gap:.8cqw;min-height:0}
+.sgroup .head{display:flex;align-items:baseline;gap:1cqw;flex-wrap:wrap}
+.sgroup .head .label{font-size:2.1cqw;transform:rotate(-1.5deg)}
+.sgroup .head p{font-size:1.45cqw;font-weight:600;background:rgba(255,255,255,.75);border-radius:.8cqw;padding:.3cqw .8cqw}
+.pics{display:flex;gap:1.1cqw;height:27cqw;flex:none}
+.pic{margin:0;background:#fff;padding:.5cqw;border-radius:1cqw;box-shadow:0 .6cqw 1.4cqw rgba(10,60,120,.3);flex:1;min-width:0;height:100%}
+.pic img{width:100%;height:100%;object-fit:cover;border-radius:.6cqw;display:block}
+.pic:nth-child(1){transform:rotate(-2deg)}.pic:nth-child(2){transform:rotate(1.5deg)}.pic:nth-child(3){transform:rotate(-1deg)}
+
+/* ---------- zones ---------- */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw;flex:1;align-content:start}
+.zone{background:#fff;border-radius:1.6cqw;padding:1.4cqw;display:flex;flex-direction:column;gap:.6cqw;box-shadow:0 .5cqw 1.2cqw rgba(10,60,120,.25)}
+.zone.dirty{background:var(--orange);color:#fff}
+.zone.out{background:var(--ink);color:#fff}
+.zone h3{font-family:var(--grunge);font-weight:400;font-size:3cqw;margin:0;text-transform:lowercase}
+.zone p{font-size:1.75cqw}
+
+.foot{position:absolute;left:6cqw;right:6cqw;bottom:2cqw;display:flex;justify-content:space-between;font-family:var(--wide);font-size:.95cqw;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:700;text-shadow:0 .1cqw .4cqw rgba(0,40,90,.45)}
+.wink{width:12cqw;right:3.5cqw;top:3cqw;transform:rotate(10deg)}
+.wink.low{top:auto;bottom:3cqw;right:4cqw}
+
+/* ---------- nav ---------- */
+.bar{display:flex;align-items:center;justify-content:center;gap:16px;padding-top:12px}
+.bar button{font:800 16px var(--body);color:#fff;background:var(--orange);border:0;border-radius:99px;padding:9px 20px;cursor:pointer;min-width:48px;box-shadow:0 3px 0 #c94d05}
+.bar button:hover{background:var(--orange-2)}
+.bar button:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.bar output{font:700 14px var(--wide);color:var(--sky);font-variant-numeric:tabular-nums;min-width:64px;text-align:center}
+
+@media (max-aspect-ratio:1/1){
+  .deck{align-items:stretch}
+  .stage{width:100%;aspect-ratio:auto;height:100%}
+  .slide{overflow-y:auto;padding:10cqw 6cqw 14cqw;gap:4cqw;border-radius:3cqw}
+  .slide::after{position:fixed}
+  .eyebrow{font-size:2.8cqw}
+  h1{font-size:15cqw}h2{font-size:8.6cqw}
+  p,li,.cell p,.panel p,.panel li,.cell li,.zone p{font-size:4cqw}
+  .note{font-size:3.8cqw;padding:2cqw 3cqw;border-radius:2.4cqw}
+  .cell,.panel,.zone,.week{border-radius:3.4cqw;padding:3.4cqw 3.8cqw;gap:1.6cqw}
+  .cell h3,.panel h3{font-size:5.6cqw}.zone h3{font-size:7cqw}
+  .tag{font-size:2.4cqw;padding:.8cqw 2cqw}
+  .warn{font-size:3.8cqw;padding:3cqw 3.6cqw;border-radius:3cqw}
+  .g2,.g3,.g4,.g2w,.zones,.s5,.s6{grid-template-columns:1fr}.s6 .pics{height:56cqw}.fine{font-size:3cqw!important}.weeks{grid-template-columns:1fr 1fr}
+  .grid,.weeks,.zones,.styles{flex:none;gap:4cqw}
+  .week b{font-size:4.4cqw}.week span{font-size:3.5cqw}.week span.now{border-radius:1.4cqw;padding:.8cqw 1.4cqw}
+  ul,ol{padding-left:5cqw;gap:2cqw}.steps{padding:0;gap:2.4cqw}
+  .steps li{grid-template-columns:8cqw 1fr}.steps li::before{width:6cqw;height:6cqw;font-size:3.6cqw}
+  .cover{justify-content:flex-end;min-height:100%}
+  .cover .face{width:62cqw;top:8cqw}.cover .wm img{height:8cqw}.cover .cart{width:20cqw;right:5cqw;top:60cqw}
+  .cover .title{font-size:11cqw}.cover .small{font-size:4.2cqw;padding:2cqw 3cqw}.cover .sub{font-size:2.8cqw}
+  .label{border-radius:3cqw;padding:1.4cqw 3.4cqw}
+  .sgroup .head .label{font-size:5.4cqw}.sgroup .head p{font-size:3.6cqw;padding:1cqw 2cqw}
+  .pics{gap:2.4cqw;height:56cqw}.pic{padding:1.2cqw;border-radius:2.4cqw}.pic img{border-radius:1.6cqw}
+  .wink,.wink.low{width:22cqw;top:4cqw;right:4cqw;bottom:auto}
+  .blurstar{width:70cqw}
+  .foot{position:static;margin-top:auto;font-size:2.4cqw;gap:4cqw}
+}
+</style>
+
+<style>
+/* lesson 2 extras: cartridge code decoder, needle groupings, grey-wash swatches, consumables chips */
+.code{display:flex;gap:1.2cqw;align-items:stretch;flex-wrap:wrap}
+.code .part{background:#fff;border-radius:1.6cqw;padding:1.2cqw 1.6cqw;display:flex;flex-direction:column;gap:.5cqw;flex:1;min-width:0;box-shadow:0 .5cqw 1.2cqw rgba(10,60,120,.25)}
+.code .part b{font-family:var(--cond);font-size:7cqw;line-height:.9;color:var(--orange)}
+.code .part:nth-child(2) b{color:var(--sky)}.code .part:nth-child(3) b{color:var(--ink)}
+.code .part span{font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:1.9cqw}
+.code .part p{font-size:1.6cqw}
+.nd{width:100%;max-width:15cqw;height:auto;fill:var(--ink);display:block}
+.needles{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4cqw;align-content:start}
+.needles .cell{align-items:flex-start}
+.needles .cell h3{font-size:2.4cqw}
+.needles .cell em{font-style:normal;font-family:var(--wide);font-weight:700;font-size:1cqw;color:var(--sky);letter-spacing:.06em;text-transform:uppercase}
+.tbl{width:100%;border-collapse:collapse;font-size:1.75cqw}
+.tbl th{font-family:var(--cond);text-transform:uppercase;text-align:left;font-size:1.6cqw;color:var(--sky);padding:.4cqw .8cqw;border-bottom:.2cqw solid var(--ink)}
+.tbl td{padding:.75cqw .8cqw;border-bottom:.1cqw solid #d5e6f5;vertical-align:top}
+.tbl td:last-child{font-family:var(--cond);font-weight:700;font-size:1.9cqw;white-space:nowrap}
+.swatch{display:flex;gap:.6cqw;margin:.4cqw 0}
+.swatch i{flex:1;height:3.4cqw;border-radius:.8cqw;border:.2cqw solid #fff;box-shadow:0 .2cqw .6cqw rgba(0,0,0,.15)}
+.chips{display:flex;flex-wrap:wrap;gap:.9cqw;align-content:flex-start}
+.chips span{background:#fff;border-radius:99px;padding:.6cqw 1.4cqw;font-weight:700;font-size:1.6cqw;box-shadow:0 .3cqw .8cqw rgba(10,60,120,.22)}
+.chips span.o{background:var(--orange);color:#fff}.chips span.k{background:var(--ink);color:#fff}
+.big3 b{font-family:var(--grunge);font-weight:400;font-size:3.2cqw;color:var(--orange);line-height:1}
+@media (max-aspect-ratio:1/1){
+  .code{flex-direction:column}.code .part b{font-size:16cqw}.code .part span{font-size:4.6cqw}.code .part p{font-size:4cqw}
+  .code .part{border-radius:3.4cqw;padding:3cqw 4cqw}
+  .needles{grid-template-columns:1fr 1fr}.needles .cell h3{font-size:5.6cqw}.needles .cell em{font-size:2.6cqw}.nd{max-width:30cqw}
+  .tbl{font-size:3.6cqw}.tbl th{font-size:3.4cqw}.tbl td:last-child{font-size:3.8cqw;white-space:normal}
+  .swatch i{height:8cqw;border-radius:2cqw}
+  .chips span{font-size:3.8cqw;padding:1.4cqw 3cqw}
+  .big3 b{font-size:7cqw}
+}
+</style>
+<div class="deck">
+<div class="stage" id="stage">
+
+<section class="slide hot cover on" aria-label="Обложка">
+  <div class="drips"></div>
+  <img class="sticker face" src="{{logo}}" alt="Логотип ink.quisition: девушка-маскот, tattoo artist">
+  <img class="sticker cart" src="{{cartridge}}" alt="">
+  <span class="sub">базовый курс татуировки · урок 2 из 13</span>
+  <div class="label title">Оборудование</div>
+  <div class="row">
+    <div class="label small wm"><img src="{{wordmark}}" alt="INK.QUISITION"></div>
+    <div class="label small">Знакомимся с машинкой. Рисуем потом</div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Цели занятия">
+  <span class="eyebrow">сегодня</span>
+  <h2>что ты будешь <em>уметь</em> к концу занятия</h2>
+  <div class="panel" style="flex:none">
+    <ul>
+      <li>Отличать катушечную, роторную и pen-машинку.</li>
+      <li>Понимать, что такое ход, вольтаж и вылет иглы.</li>
+      <li>Читать маркировку картриджа и выбирать иглу под задачу.</li>
+      <li>Знать базу по пигментам: чёрный, серый ряд, чем разводить.</li>
+      <li>Собрать машинку, настроить её и сделать первые точки на синтетике.</li>
+    </ul>
+  </div>
+  <p class="note">Сначала 15 минут повтора: обмотка места на скорость и снятие перчаток.</p>
+  <img class="sticker wink low" src="{{wink}}" alt="">
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Типы машинок">
+  <span class="eyebrow">машинки</span>
+  <h2>три типа <em>машинок</em></h2>
+  <div class="grid g3">
+    <div class="cell"><h3>Катушечная</h3><span class="tag no">coil</span><p>Две катушки-магнита тянут боёк. Громкая, тяжёлая, долго настраивать. Обычно отдельная под контур и под покрас.</p></div>
+    <div class="cell"><h3>Роторная</h3><span class="tag blue">rotary</span><p>Внутри моторчик. Тихая, лёгкая, почти без настройки. Одна машинка делает и линии, и тени.</p></div>
+    <div class="cell"><h3>Pen-машинка</h3><span class="tag">наш выбор</span><p>Роторная в форме ручки. Держишь как карандаш, картриджи меняются за секунду, рука меньше устаёт.</p></div>
+  </div>
+  <p class="note">Лучшая машинка — та, к которой привыкла рука. На старте важнее ровный мотор и удобный вес, чем бренд.</p>
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Ход, вольтаж, вылет">
+  <span class="eyebrow">настройки</span>
+  <h2>ход, вольтаж и <em>вылет иглы</em></h2>
+  <div class="grid g3">
+    <div class="cell big3"><b>ход</b><p>На сколько миллиметров выходит игла за цикл. Обычно около 2,5–4,5 мм.</p><p><b style="font-family:var(--body);font-size:inherit;color:var(--ink)">Короткий</b> — мягче, для теней. <b style="font-family:var(--body);font-size:inherit;color:var(--ink)">Длинный</b> — сильнее, для контура и заливки.</p></div>
+    <div class="cell big3"><b>вольтаж</b><p>Скорость иглы. У многих pen-машинок рабочий диапазон примерно 7–10 В.</p><p>Начинаем с цифры производителя, потом подстраиваем по звуку и следу.</p></div>
+    <div class="cell big3"><b>вылет</b><p>Насколько игла выходит из картриджа. Обычно небольшой, около 1–2 мм.</p><p>Глубину делает рука, а не вылет.</p></div>
+  </div>
+  <p class="warn">Скорость машинки = скорость руки. <b>Быстрая рука и низкий вольтаж — пунктир. Медленная рука и высокий вольтаж — перебитая кожа.</b></p>
+</section>
+
+<section class="slide" aria-label="Питание">
+  <span class="eyebrow">питание</span>
+  <h2>блок, провод, педаль <em>или без проводов</em></h2>
+  <div class="grid g4">
+    <div class="cell"><h3>Блок питания</h3><p>Держит и показывает вольтаж. На нём выставляем цифру.</p></div>
+    <div class="cell"><h3>Провод</h3><p>RCA-кабель от блока к машинке. Во время работы — в барьерном рукаве.</p></div>
+    <div class="cell"><h3>Педаль</h3><p>Нажала — работает, отпустила — стоп. Тоже прячем в пакет.</p></div>
+    <div class="cell"><h3>Беспроводная</h3><p>Аккумулятор в машинке, вольтаж на самой ручке. Нет провода, но нужен запасной аккумулятор.</p></div>
+  </div>
+  <img class="sticker" src="{{cartridge}}" alt="" style="width:11cqw;right:5cqw;bottom:3cqw;transform:rotate(-20deg)">
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Картридж">
+  <span class="eyebrow">картриджи</span>
+  <h2>картридж — <em>одноразовый</em></h2>
+  <div class="grid g2">
+    <div class="panel">
+      <h3>Что внутри</h3>
+      <ul>
+        <li><b>Стерильная игла</b> в пластиковом корпусе.</li>
+        <li><b>Мембрана</b> — не пускает пигмент и жидкости обратно в машинку. Берём картриджи только с ней.</li>
+        <li>На упаковке — <b>дата годности</b> и способ стерилизации.</li>
+      </ul>
+    </div>
+    <div class="panel" style="background:var(--ink);color:#fff">
+      <h3 style="color:var(--orange-2)">Правила</h3>
+      <ul>
+        <li>Вскрываем только при клиенте.</li>
+        <li>Держим за корпус, иглу и кончик не трогаем.</li>
+        <li>Упаковка порвана или срок вышел — не используем.</li>
+        <li>После работы — сразу в контейнер для острых отходов. Даже после синтетики.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Маркировка картриджа">
+  <span class="eyebrow">как читать упаковку</span>
+  <h2>что значит <em style="text-transform:none">1003RL</em></h2>
+  <div class="code">
+    <div class="part"><b>10</b><span>Калибр иглы</span><p>#10 ≈ 0,30 мм. Бывают #8 ≈ 0,25 мм (bugpin, тонкая работа) и #12 ≈ 0,35 мм.</p></div>
+    <div class="part"><b>03</b><span>Сколько игл</span><p>3 иглы в пучке. Чем больше игл, тем толще линия или шире пятно.</p></div>
+    <div class="part"><b>RL</b><span>Конфигурация</span><p>Round Liner: иглы плотно в кружок. Для линий.</p></div>
+  </div>
+  <p class="note">Иногда в конце <b>LT</b> — long taper, длинный конус заточки. След тоньше и мягче. Попробуй сама: что значит <b>1207CM</b>?</p>
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Конфигурации игл">
+  <span class="eyebrow">конфигурации</span>
+  <h2>как стоят <em>иглы</em> в пучке</h2>
+  <div class="needles">
+    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="60.0" cy="35.0" r="5.2"/><circle cx="70.6" cy="35.0" r="5.2"/><circle cx="65.3" cy="44.2" r="5.2"/><circle cx="54.7" cy="44.2" r="5.2"/><circle cx="49.4" cy="35.0" r="5.2"/><circle cx="54.7" cy="25.8" r="5.2"/><circle cx="65.3" cy="25.8" r="5.2"/></svg><h3>RL</h3><em>round liner</em><p>Плотный кружок. Линии и контур.</p></div>
+    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="60.0" cy="35.0" r="5.2"/><circle cx="75.0" cy="35.0" r="5.2"/><circle cx="67.5" cy="48.0" r="5.2"/><circle cx="52.5" cy="48.0" r="5.2"/><circle cx="45.0" cy="35.0" r="5.2"/><circle cx="52.5" cy="22.0" r="5.2"/><circle cx="67.5" cy="22.0" r="5.2"/></svg><h3>RS</h3><em>round shader</em><p>Кружок посвободнее. Точки, мелкие тени.</p></div>
+    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="18.0" cy="30.0" r="5.2"/><circle cx="28.6" cy="30.0" r="5.2"/><circle cx="39.2" cy="30.0" r="5.2"/><circle cx="49.8" cy="30.0" r="5.2"/><circle cx="60.4" cy="30.0" r="5.2"/><circle cx="71.0" cy="30.0" r="5.2"/><circle cx="81.6" cy="30.0" r="5.2"/><circle cx="92.2" cy="30.0" r="5.2"/><circle cx="102.8" cy="30.0" r="5.2"/><circle cx="23.3" cy="39.0" r="5.2"/><circle cx="33.9" cy="39.0" r="5.2"/><circle cx="44.5" cy="39.0" r="5.2"/><circle cx="55.1" cy="39.0" r="5.2"/><circle cx="65.7" cy="39.0" r="5.2"/><circle cx="76.3" cy="39.0" r="5.2"/><circle cx="86.9" cy="39.0" r="5.2"/><circle cx="97.5" cy="39.0" r="5.2"/></svg><h3>M1</h3><em>magnum</em><p>Два ряда ёлочкой. Заливка и большие тени.</p></div>
+    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="18.0" cy="51.2" r="5.2"/><circle cx="28.6" cy="41.8" r="5.2"/><circle cx="39.2" cy="35.2" r="5.2"/><circle cx="49.8" cy="31.2" r="5.2"/><circle cx="60.4" cy="30.0" r="5.2"/><circle cx="71.0" cy="31.5" r="5.2"/><circle cx="81.6" cy="35.6" r="5.2"/><circle cx="92.2" cy="42.4" r="5.2"/><circle cx="102.8" cy="52.0" r="5.2"/><circle cx="23.3" cy="55.2" r="5.2"/><circle cx="33.9" cy="47.2" r="5.2"/><circle cx="44.5" cy="41.9" r="5.2"/><circle cx="55.1" cy="39.3" r="5.2"/><circle cx="65.7" cy="39.4" r="5.2"/><circle cx="76.3" cy="42.2" r="5.2"/><circle cx="86.9" cy="47.7" r="5.2"/><circle cx="97.5" cy="55.9" r="5.2"/></svg><h3>CM / RM</h3><em>curved magnum</em><p>Магнум с закруглённым краем. Самые мягкие тени.</p></div>
+    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="18.0" cy="35.0" r="5.2"/><circle cx="28.6" cy="35.0" r="5.2"/><circle cx="39.2" cy="35.0" r="5.2"/><circle cx="49.8" cy="35.0" r="5.2"/><circle cx="60.4" cy="35.0" r="5.2"/><circle cx="71.0" cy="35.0" r="5.2"/><circle cx="81.6" cy="35.0" r="5.2"/><circle cx="92.2" cy="35.0" r="5.2"/><circle cx="102.8" cy="35.0" r="5.2"/></svg><h3>F</h3><em>flat</em><p>Один ровный ряд. Чёткие геометрические края.</p></div>
+  </div>
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Какая игла для чего">
+  <span class="eyebrow">шпаргалка</span>
+  <h2>какая игла <em>для чего</em></h2>
+  <div class="panel" style="flex:none">
+    <table class="tbl">
+      <thead><tr><th>Задача</th><th>Что берём</th></tr></thead>
+      <tbody>
+        <tr><td>Файнлайн, тонкие надписи</td><td>RL 1–3, #8 или #10, длинный конус</td></tr>
+        <tr><td>Обычный контур</td><td>RL 5–7</td></tr>
+        <tr><td>Толстый контур</td><td>RL 9–11</td></tr>
+        <tr><td>Точки, дотворк, мелкие тени</td><td>RS 3–7 или RL 3–5</td></tr>
+        <tr><td>Тени в графике и микрореализме</td><td>CM / RM 5–9</td></tr>
+        <tr><td>Заливка чёрным, большие тени</td><td>M1 / CM 9–15 и больше</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Это ориентир, а не закон. Свои любимые иглы ты найдёшь со временем.</p>
+</section>
+
+<section class="slide" aria-label="Пигменты">
+  <span class="eyebrow">пигменты</span>
+  <h2>чёрный и <em>серый ряд</em></h2>
+  <div class="grid g2">
+    <div class="panel">
+      <h3>Серый ряд (grey wash)</h3>
+      <div class="swatch" aria-label="Шкала от чёрного до светло-серого"><i style="background:#111"></i><i style="background:#3a3a3a"></i><i style="background:#6b6b6b"></i><i style="background:#9e9e9e"></i><i style="background:#cfcfcf"></i></div>
+      <p>Готовый набор оттенков или чёрный, разведённый в колпачке. Пропорции не учим наизусть: делаем шкалу из 3–5 колпачков и смотрим, как ложится. Подробно — на уроке 8.</p>
+      <p><b>Чёрный</b> — основа графики, дарк-графики и микрореализма: линии и заливка.</p>
+    </div>
+    <div class="panel">
+      <h3>Правила</h3>
+      <p><span class="tag blue">можно</span> раствор для разведения, стерильная или дистиллированная вода.</p>
+      <p><span class="tag no">нельзя</span> вода из-под крана, бутилированная вода.</p>
+      <p>На бутылке — дата годности. Вскрытую подписываем датой вскрытия.</p>
+      <p>Покупаем у проверенных поставщиков, с составом на этикетке. Остатки из колпачка в бутылку не сливаем.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" aria-label="Расходники">
+  <span class="eyebrow">на один сеанс</span>
+  <h2>что лежит <em>на столе</em></h2>
+  <div class="chips">
+    <span class="o">картриджи</span><span class="o">пигмент</span><span>колпачки и подставка</span><span>перчатки</span><span>плёнка</span><span>барьерные рукава и пакеты</span><span>пелёнки</span><span>вазелин или бальзам</span><span>мыло для тату</span><span>бутылка с водой</span><span>бумажные полотенца</span><span>бритвы</span><span>трансферная бумага</span><span>гель для трафарета</span><span>плёнка для заживления</span><span class="k">контейнер для острых отходов</span><span class="k">пакет для медотходов</span>
+  </div>
+  <p class="note">Всё выкладываем до начала. Лезть в ящик посреди сеанса — перекрёстное заражение.</p>
+  <img class="sticker wink low" src="{{wink}}" alt="">
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide" aria-label="Первый контакт с синтетикой">
+  <span class="eyebrow">практика</span>
+  <h2>первый контакт <em>с синтетикой</em></h2>
+  <div class="grid g2">
+    <div class="panel">
+      <h3>Хват и посадка</h3>
+      <ul>
+        <li>Держи как ручку, ближе к игле. Хват расслабленный.</li>
+        <li>Мизинец или ребро ладони — на поверхности. Рука не висит.</li>
+        <li>Угол к коже для линий — примерно 45–60°.</li>
+        <li>Свободная рука натягивает или прижимает «кожу».</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Упражнения · RL 3–5, чёрный</h3>
+      <ol class="steps">
+        <li><p>Ряд из 20 точек одного размера.</p></li>
+        <li><p>Штрихи по 1 см: вход и выход в движении.</p></li>
+        <li><p>Три линии: слишком мелко, нормально, слишком глубоко.</p></li>
+        <li><p>Одна линия медленно и быстро на одном вольтаже.</p></li>
+        <li><p>Протереть и посмотреть, что осталось.</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="blurstar"></div>
+</section>
+
+<section class="slide hot" aria-label="Проверь себя и домашнее задание">
+  <div class="drips"></div>
+  <img class="sticker wink" src="{{wink}}" alt="">
+  <h2 style="color:#fff;text-shadow:0 .3cqw 0 rgba(0,0,0,.18)">проверь себя и <em style="color:var(--ink)">домашка</em></h2>
+  <div class="grid g2">
+    <div class="panel">
+      <h3>Ответь без подсказок</h3>
+      <ol class="steps">
+        <li><p>Почему начинаем с pen-машинки?</p></li>
+        <li><p>Что будет, если рука быстрая, а вольтаж низкий?</p></li>
+        <li><p>Расшифруй 1003RL и 1207CM.</p></li>
+        <li><p>Какую иглу взять для файнлайна, для теней, для заливки?</p></li>
+        <li><p>Чем можно разводить пигмент, а чем нельзя?</p></li>
+      </ol>
+    </div>
+    <div class="panel">
+      <h3>До следующего занятия</h3>
+      <ul>
+        <li><b>Шпаргалка:</b> «какая игла для чего» своими словами и от руки, с рисунками пучков.</li>
+        <li><b>Рука:</b> линии от руки по 15–20 минут в день.</li>
+        <li><b>Набор:</b> если покупаешь свой — список с ценами, покажи мне до покупки.</li>
+        <li><b>Здоровье:</b> анализ на антитела к гепатиту B, если ещё не сдала.</li>
+      </ul>
+      <p class="fine">Дальше: кожа, тело и клиент. Слои кожи, натяжение, посадка и первая консультация.</p>
+    </div>
+  </div>
+  <div class="foot"><span class="label wm" style="padding:.4cqw 1cqw"><img src="{{wordmark}}" alt="INK.QUISITION" style="height:2.2cqw;display:block"></span><span>урок 2 · оборудование</span></div>
+</section>
+
+</div>
+</div>
+<nav class="bar" aria-label="Слайды">
+  <button id="prev" type="button" aria-label="Предыдущий слайд">←</button>
+  <output id="count" aria-live="polite">1 / 13</output>
+  <button id="next" type="button" aria-label="Следующий слайд">→</button>
+</nav>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,out=document.getElementById('count');
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(s,k){s.classList.toggle('on',k===i)});out.textContent=(i+1)+' / '+slides.length;try{history.replaceState(null,'','#s'+(i+1))}catch(e){}}
+  document.getElementById('prev').onclick=function(){go(i-1)};
+  document.getElementById('next').onclick=function(){go(i+1)};
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1)}});
+  var x0=null,st=document.getElementById('stage');
+  st.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  st.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
+  st.addEventListener('click',function(e){var r=st.getBoundingClientRect();go(i+(e.clientX-r.left>r.width/3?1:-1))});
+  var m=/^#s(\d+)$/.exec(location.hash);go(m?parseInt(m[1],10)-1:0);
+})();
+</script>
