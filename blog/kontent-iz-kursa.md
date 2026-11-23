@@ -32,52 +32,56 @@
 
 ---
 
-## Черновики подписей
+## Черновики подписей (в твоём голосе)
 
-Это черновики в «френдли»-тоне. Когда пришлёшь свои примеры текстов, подгоню голос.
+Переписано по твоим постам и сторис: коротко, первая строка с характером, английский первым, одно действие в конце.
 
 ### 1. Анонс курса
-**RU:**
-В декабре у меня новый опыт — я впервые беру ученицу 🖤
-Месяц, 12 занятий, с нуля: от гигиены и первой линии на синтетике до целой работы.
-Буду показывать процесс здесь, в сторис. Без прикрас: и красивые линии, и первые кривые 😅
-Если вам интересно, как устроена профессия изнутри, оставайтесь.
-
 **EN:**
-This December I'm taking on my first apprentice 🖤
-One month, 12 sessions, from zero: hygiene, first lines on practice skin, all the way to a full piece.
-I'll share the whole process in stories — the pretty lines and the wobbly first ones 😅
-Stick around if you've ever wondered what happens behind the scenes.
+plot twist: this December I'm teaching 🖤
 
-### 2. Почему я прошу сделать микрореализм крупнее
+one student, one month, 12 sessions — from wrapping the station to a full piece on practice skin.
+I'll show the whole thing in stories. pretty lines and wobbly ones too 😅
+
 **RU:**
-«А можно поменьше?» — самый частый вопрос про микрореализм 🙂
-Отвечаю честно: можно, но через пару лет вы меня не поблагодарите.
-Пигмент в коже со временем немного расходится. Чем мельче детали, тем быстрее они сливаются в пятно.
-Поэтому я подбираю размер так, чтобы работа читалась и через 10 лет. Это сейчас разбираем с ученицей на курсе: тату рисуется не на сегодня, а на годы вперёд.
+поворот сюжета: в декабре я учу 🖤
 
+одна ученица, месяц, 12 занятий — от обмотки рабочего места до целой работы на синтетике.
+всё покажу в сторис. и красивые линии, и кривые первые тоже 😅
+
+### 2. Почему я прошу делать микрореализм крупнее
 **EN:**
-"Can we make it smaller?" — the question I hear most about micro-realism 🙂
-Honest answer: we can, but future you won't thank me.
-Ink settles and softens in the skin over time. The tinier the details, the sooner they blur together.
-So I size every piece to still read clearly in 10 years. That's exactly what my apprentice and I are working on this week: a tattoo isn't drawn for today, it's drawn for years.
+"can we go smaller?" — let's talk 🙂
+
+ink softens in the skin over the years. the tinier the details, the sooner they melt together.
+so I size every piece to still read in 10 years, not just on day one.
+
+DM me your idea — I'll tell you honestly what size it needs ✨
+
+**RU:**
+«а можно поменьше?» — давайте поговорим 🙂
+
+пигмент в коже со временем чуть расходится. чем мельче детали, тем быстрее они сливаются.
+поэтому я подбираю размер так, чтобы работа читалась и через 10 лет, а не только в первый день.
+
+пишите идею в директ — честно скажу, какой размер ей нужен ✨
 
 ### 3. Как рождается мой эскиз
-**RU:**
-Самая долгая часть моей работы — это не тату, а поиск референсов 👀
-Вот как это выглядит: доска в Pinterest → десятки картинок → три идеи → один эскиз, который я действительно хочу набить.
-Мои любимые запросы — когда вы приходите за авторским эскизом или даёте свободу на большой проект. Тогда получается что-то по-настоящему ваше.
-Хотите эскиз из этой серии? Пишите в директ 🖤
-
 **EN:**
-The longest part of my work isn't tattooing, it's hunting for references 👀
-Here's how it goes: a Pinterest board → dozens of images → three ideas → one design I genuinely want to tattoo.
-My favourite requests are when you come for one of my original designs, or trust me with a bigger project. That's when it becomes truly yours.
-Want a piece from this series? DM me 🖤
+the longest part of my job isn't tattooing. it's the references 👀
+
+pinterest board → 50 images → 3 ideas → 1 design I actually want to tattoo.
+this one is still free. original design • DM to book 🖤
+
+**RU:**
+самая долгая часть моей работы — не тату, а референсы 👀
+
+доска в pinterest → 50 картинок → 3 идеи → 1 эскиз, который я правда хочу набить.
+этот ещё свободен. авторский эскиз • пишите в директ 🖤
 
 ---
 
 ## Что нужно от тебя, чтобы продолжить
 1. Согласие ученицы на съёмку и в каком формате.
-2. 5–8 своих подписей, пара сторис, 2–3 переписки с клиентами — для голоса.
-3. Сколько постов в неделю реально делать во время курса (у тебя ещё и рабочие дни).
+2. Сколько постов в неделю реально делать во время курса (у тебя ещё и рабочие дни).
+3. Какие авторские эскизы сейчас свободны — сделаю под них серию постов.
