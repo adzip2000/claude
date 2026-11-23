@@ -196,8 +196,18 @@ li::marker{color:var(--orange);font-weight:800}
 .chips{display:flex;flex-wrap:wrap;gap:.9cqw;align-content:flex-start}
 .chips span{background:#fff;border-radius:99px;padding:.6cqw 1.4cqw;font-weight:700;font-size:1.6cqw;box-shadow:0 .3cqw .8cqw rgba(10,60,120,.22)}
 .chips span.o{background:var(--orange);color:#fff}.chips span.k{background:var(--ink);color:#fff}
+.eq{height:13cqw;width:100%;object-fit:contain;display:block;margin:-.4cqw 0 .2cqw}
+.g3c{grid-template-columns:.75fr 1.2fr 1.2fr}
+.cfg{display:grid;grid-template-columns:1.1fr 1fr;gap:1.6cqw;flex:1;min-height:0}
+.cfg .photo{background:#fff;border-radius:1.6cqw;padding:.8cqw;box-shadow:0 .5cqw 1.2cqw rgba(10,60,120,.25);display:flex;align-items:center;justify-content:center;min-height:0}
+.cfg .photo img{height:100%;max-height:33cqw;width:auto;max-width:100%;display:block}
+.cfg .needles .cell{padding:1cqw 1.3cqw;gap:.3cqw}.cfg .nd{max-width:9cqw}.cfg .needles .cell h3{font-size:2cqw}.cfg .needles .cell p{font-size:1.45cqw}
+.cfg .needles{grid-template-columns:1fr 1fr;gap:1.2cqw}
+.taper{display:grid;grid-template-columns:1.15fr 1fr;gap:1.6cqw;align-items:start}
+.taper img{width:100%;border-radius:1.6cqw;display:block;box-shadow:0 0 0 .35cqw #fff,0 .5cqw 1.4cqw rgba(10,60,120,.3)}
 .big3 b{font-family:var(--grunge);font-weight:400;font-size:3.2cqw;color:var(--orange);line-height:1}
 @media (max-aspect-ratio:1/1){
+  .eq{height:36cqw}.g3c,.cfg,.taper,.cfg .needles{grid-template-columns:1fr}.cfg{flex:none}.cfg .photo img{max-height:none;height:auto}.cfg .needles .cell{padding:3.4cqw 3.8cqw}.cfg .nd{max-width:30cqw}.cfg .needles .cell h3{font-size:5.6cqw}.cfg .needles .cell p{font-size:4cqw}
   .code{flex-direction:column}.code .part b{font-size:16cqw}.code .part span{font-size:4.6cqw}.code .part p{font-size:4cqw}
   .code .part{border-radius:3.4cqw;padding:3cqw 4cqw}
   .needles{grid-template-columns:1fr 1fr}.needles .cell h3{font-size:5.6cqw}.needles .cell em{font-size:2.6cqw}.nd{max-width:30cqw}
@@ -243,11 +253,10 @@ li::marker{color:var(--orange);font-weight:800}
   <span class="eyebrow">машинки</span>
   <h2>три типа <em>машинок</em></h2>
   <div class="grid g3">
-    <div class="cell"><h3>Катушечная</h3><span class="tag no">coil</span><p>Две катушки-магнита тянут боёк. Громкая, тяжёлая, долго настраивать. Обычно отдельная под контур и под покрас.</p></div>
-    <div class="cell"><h3>Роторная</h3><span class="tag blue">rotary</span><p>Внутри моторчик. Тихая, лёгкая, почти без настройки. Одна машинка делает и линии, и тени.</p></div>
-    <div class="cell"><h3>Pen-машинка</h3><span class="tag">наш выбор</span><p>Роторная в форме ручки. Держишь как карандаш, картриджи меняются за секунду, рука меньше устаёт.</p></div>
+    <div class="cell"><img class="eq" src="{{m-coil}}" alt="Катушечная тату-машинка с двумя катушками"><h3>Катушечная</h3><span class="tag no">coil</span><p>Две катушки-магнита тянут боёк. Громкая, тяжёлая, долго настраивать. Обычно отдельная под контур и под покрас.</p></div>
+    <div class="cell"><h3>Роторная</h3><span class="tag blue">rotary</span><p>Внутри моторчик. Тихая, лёгкая, почти без настройки. Одна машинка делает и линии, и тени.</p><p><b>Pen-машинка справа — тоже роторная</b>, просто в форме ручки.</p></div>
+    <div class="cell"><img class="eq" src="{{m-pen}}" alt="Беспроводная pen-машинка с экраном вольтажа"><h3>Pen-машинка</h3><span class="tag">наш выбор</span><p>Роторная в форме ручки. Держишь как карандаш, картриджи меняются за секунду, рука меньше устаёт.</p></div>
   </div>
-  <p class="note">Лучшая машинка — та, к которой привыкла рука. На старте важнее ровный мотор и удобный вес, чем бренд.</p>
   <div class="blurstar"></div>
 </section>
 
@@ -278,7 +287,8 @@ li::marker{color:var(--orange);font-weight:800}
 <section class="slide" aria-label="Картридж">
   <span class="eyebrow">картриджи</span>
   <h2>картридж — <em>одноразовый</em></h2>
-  <div class="grid g2">
+  <div class="grid g3c">
+    <div class="cell" style="justify-content:center"><img src="{{cart-one}}" alt="Картридж с иглой крупным планом" style="width:100%;display:block"></div>
     <div class="panel">
       <h3>Что внутри</h3>
       <ul>
@@ -312,14 +322,35 @@ li::marker{color:var(--orange);font-weight:800}
   <div class="blurstar"></div>
 </section>
 
+<section class="slide" aria-label="Заточка и диаметр">
+  <span class="eyebrow">игла крупным планом</span>
+  <h2>заточка и <em>диаметр</em></h2>
+  <div class="taper">
+    <img src="{{taper}}" alt="Схема: заточка иглы L, M, S и диаметр 08, 10, 12">
+    <div class="grid" style="gap:1.2cqw">
+      <div class="panel"><h3>Заточка (taper)</h3>
+        <p><span class="tag blue">L · long</span> длинный конус: тоньше и мягче след. Файнлайн, мягкие тени.</p>
+        <p><span class="tag">M · medium</span> средний: универсальная.</p>
+        <p><span class="tag no">S · short</span> короткий: заносит больше пигмента. Плотный контур и заливка.</p>
+      </div>
+      <div class="panel"><h3>Диаметр (калибр)</h3>
+        <p><b>08</b> ≈ 0,25 мм · <b>10</b> ≈ 0,30 мм · <b>12</b> ≈ 0,35 мм. Тоньше игла — тоньше и аккуратнее след.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="slide" aria-label="Конфигурации игл">
   <span class="eyebrow">конфигурации</span>
   <h2>как стоят <em>иглы</em> в пучке</h2>
-  <div class="needles">
+  <div class="cfg">
+    <div class="photo"><img src="{{cart-types}}" alt="Картриджи RL, RS, RM и M1 с увеличенными пучками игл"></div>
+    <div class="needles">
     <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="60.0" cy="35.0" r="5.2"/><circle cx="70.6" cy="35.0" r="5.2"/><circle cx="65.3" cy="44.2" r="5.2"/><circle cx="54.7" cy="44.2" r="5.2"/><circle cx="49.4" cy="35.0" r="5.2"/><circle cx="54.7" cy="25.8" r="5.2"/><circle cx="65.3" cy="25.8" r="5.2"/></svg><h3>RL</h3><em>round liner</em><p>Плотный кружок. Линии и контур.</p></div>
     <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="60.0" cy="35.0" r="5.2"/><circle cx="75.0" cy="35.0" r="5.2"/><circle cx="67.5" cy="48.0" r="5.2"/><circle cx="52.5" cy="48.0" r="5.2"/><circle cx="45.0" cy="35.0" r="5.2"/><circle cx="52.5" cy="22.0" r="5.2"/><circle cx="67.5" cy="22.0" r="5.2"/></svg><h3>RS</h3><em>round shader</em><p>Кружок посвободнее. Точки, мелкие тени.</p></div>
-    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="18.0" cy="30.0" r="5.2"/><circle cx="28.6" cy="30.0" r="5.2"/><circle cx="39.2" cy="30.0" r="5.2"/><circle cx="49.8" cy="30.0" r="5.2"/><circle cx="60.4" cy="30.0" r="5.2"/><circle cx="71.0" cy="30.0" r="5.2"/><circle cx="81.6" cy="30.0" r="5.2"/><circle cx="92.2" cy="30.0" r="5.2"/><circle cx="102.8" cy="30.0" r="5.2"/><circle cx="23.3" cy="39.0" r="5.2"/><circle cx="33.9" cy="39.0" r="5.2"/><circle cx="44.5" cy="39.0" r="5.2"/><circle cx="55.1" cy="39.0" r="5.2"/><circle cx="65.7" cy="39.0" r="5.2"/><circle cx="76.3" cy="39.0" r="5.2"/><circle cx="86.9" cy="39.0" r="5.2"/><circle cx="97.5" cy="39.0" r="5.2"/></svg><h3>M1</h3><em>magnum</em><p>Два ряда ёлочкой. Заливка и большие тени.</p></div>
     <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="18.0" cy="51.2" r="5.2"/><circle cx="28.6" cy="41.8" r="5.2"/><circle cx="39.2" cy="35.2" r="5.2"/><circle cx="49.8" cy="31.2" r="5.2"/><circle cx="60.4" cy="30.0" r="5.2"/><circle cx="71.0" cy="31.5" r="5.2"/><circle cx="81.6" cy="35.6" r="5.2"/><circle cx="92.2" cy="42.4" r="5.2"/><circle cx="102.8" cy="52.0" r="5.2"/><circle cx="23.3" cy="55.2" r="5.2"/><circle cx="33.9" cy="47.2" r="5.2"/><circle cx="44.5" cy="41.9" r="5.2"/><circle cx="55.1" cy="39.3" r="5.2"/><circle cx="65.7" cy="39.4" r="5.2"/><circle cx="76.3" cy="42.2" r="5.2"/><circle cx="86.9" cy="47.7" r="5.2"/><circle cx="97.5" cy="55.9" r="5.2"/></svg><h3>RM</h3><em>round magnum</em><p>Магнум с закруглённым краем. Самые мягкие тени.</p></div>
+    <div class="cell"><svg viewBox="0 0 120 70" class="nd" aria-hidden="true"><circle cx="18.0" cy="30.0" r="5.2"/><circle cx="28.6" cy="30.0" r="5.2"/><circle cx="39.2" cy="30.0" r="5.2"/><circle cx="49.8" cy="30.0" r="5.2"/><circle cx="60.4" cy="30.0" r="5.2"/><circle cx="71.0" cy="30.0" r="5.2"/><circle cx="81.6" cy="30.0" r="5.2"/><circle cx="92.2" cy="30.0" r="5.2"/><circle cx="102.8" cy="30.0" r="5.2"/><circle cx="23.3" cy="39.0" r="5.2"/><circle cx="33.9" cy="39.0" r="5.2"/><circle cx="44.5" cy="39.0" r="5.2"/><circle cx="55.1" cy="39.0" r="5.2"/><circle cx="65.7" cy="39.0" r="5.2"/><circle cx="76.3" cy="39.0" r="5.2"/><circle cx="86.9" cy="39.0" r="5.2"/><circle cx="97.5" cy="39.0" r="5.2"/></svg><h3>M1</h3><em>magnum</em><p>Два ряда ёлочкой. Заливка и большие тени.</p></div>
+    </div>
   </div>
   <div class="blurstar"></div>
 </section>
@@ -433,7 +464,7 @@ li::marker{color:var(--orange);font-weight:800}
 </div>
 <nav class="bar" aria-label="Слайды">
   <button id="prev" type="button" aria-label="Предыдущий слайд">←</button>
-  <output id="count" aria-live="polite">1 / 13</output>
+  <output id="count" aria-live="polite">1 / 14</output>
   <button id="next" type="button" aria-label="Следующий слайд">→</button>
 </nav>
 <script>

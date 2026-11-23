@@ -7,5 +7,5 @@ def rep(m):
         p=os.path.join(imgdir,k+ext)
         if os.path.exists(p): return 'data:%s;base64,%s'%(mt,base64.b64encode(open(p,'rb').read()).decode())
     raise SystemExit('missing '+k)
-h=re.sub(r'\{\{(\w+)\}\}',rep,h)
+h=re.sub(r'\{\{([\w-]+)\}\}',rep,h)
 open(out,'w').write(h); print(len(h)//1024,'KB')
