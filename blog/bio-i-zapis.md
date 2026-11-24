@@ -32,6 +32,17 @@ Tbilisi & guest spots 🌍
 
 Строку с CTA меняем раз в месяц: «December is open», «2 spots left», «guest spot Bangkok · March».
 
+**Доработка (Аня выбрала идею варианта 2, но проще и человечнее):**
+- `tattoos that age well 🖤` — фаворит
+- `made to last, not just to post 🖤`
+- `tattoos for you at 30 and at 60 🖤`
+```
+tattoos that age well 🖤
+dark graphics • microrealism • fine line
+Tbilisi • RU / EN
+↓ December is open — book here
+```
+
 ## Ссылка для записи — варианты
 | Вариант | Цена | Когда подходит |
 |---|---|---|
